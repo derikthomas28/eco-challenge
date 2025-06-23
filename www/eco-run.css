@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: #e0f7fa;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(180deg, #87ceeb, #b3e5fc);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffd700 50%, #ffeb3b 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 40px rgba(255, 215, 0, 1); }
+}
+
+.clouds {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('https://cdn-icons-png.flaticon.com/512/414/414927.png') repeat-x;
+    background-size: 100px 100px;
+    opacity: 0.8;
+}
+
+.clouds-1 {
+    top: 10%;
+    animation: scrollClouds 40s linear infinite;
+}
+
+.clouds-2 {
+    top: 30%;
+    animation: scrollClouds 60s linear infinite reverse;
+}
+
+@keyframes scrollClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.hills {
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    width: 200%;
+    height: 40%;
+    background: linear-gradient(180deg, #4caf50, #388e3c);
+    clip-path: polygon(0 100%, 10% 70%, 20% 80%, 30% 60%, 40% 75%, 50% 65%, 60% 80%, 70% 70%, 80% 85%, 90% 60%, 100% 75%, 100% 100%);
+    z-index: 2;
+    animation: scrollHills 20s linear infinite;
+}
+
+@keyframes scrollHills {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 30%;
+    background: linear-gradient(180deg, #689f38, #33691e);
+    z-index: 3;
+    animation: scrollGround 10s linear infinite;
+}
+
+@keyframes scrollGround {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.game-content {
+    position: relative;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #388e3c;
+    margin-bottom: 10px;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: rgba(240, 248, 240, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #4caf50;
+    touch-action: none;
+    z-index: 5;
+}
+
+.player {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 50px;
+    height: 70px;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv-A_KRt4Wr6P46dmRGCxx21PW7hmuZWkkpA&s') no-repeat center/contain;
+    z-index: 6;
+}
+
+.jump {
+    animation: jump 0.4s linear;
+}
+
+@keyframes jump {
+    0% { bottom: 10px; }
+    25% { bottom: 140px; }
+    50% { bottom: 160px; }
+    75% { bottom: 140px; }
+    100% { bottom: 10px; }
+}
+
+.item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 5;
+}
+
+.tree { 
+    background: url('https://cdn-icons-png.flaticon.com/512/2909/2909789.png') no-repeat center/contain; 
+    bottom: 50px;
+}
+.water { 
+    background: url('https://cdn-icons-png.flaticon.com/512/415/415734.png') no-repeat center/contain; 
+    bottom: 70px;
+}
+.pollution { 
+    background: url('https://cdn-icons-png.flaticon.com/512/3075/3075977.png') no-repeat center/contain; 
+    bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #2e7d32;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.game-over {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.game-over h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.game-over p {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.restart-btn, .home-btn {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.home-btn {
+    background: linear-gradient(135deg, #0288d1, #0277bd);
+}
+
+.restart-btn:hover, .home-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn:active, .home-btn:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .container {
+        height: 100vh;
+        padding: 10px;
+    }
+
+    .game-content {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    p, .stats {
+        font-size: 0.9em;
+    }
+
+    .game-area {
+        height: 200px;
+        width: 100%;
+    }
+
+    .player {
+        width: 40px;
+        height: 55px;
+        left: 15px;
+        bottom: 5px;
+    }
+
+    .item {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tree { bottom: 35px; }
+    .water { bottom: 50px; }
+    .pollution { bottom: 5px; }
+
+    @keyframes jump {
+        0% { bottom: 5px; }
+        25% { bottom: 90px; }
+        50% { bottom: 110px; }
+        75% { bottom: 90px; }
+        100% { bottom: 5px; }
+    }
+
+    .sun {
+        width: 60px;
+        height: 60px;
+        top: 15%;
+        left: 5%;
+    }
+
+    .clouds {
+        background-size: 60px 60px;
+    }
+
+    .hills {
+        height: 30%;
+        animation: scrollHills 15s linear infinite;
+    }
+
+    .ground {
+        height: 20%;
+        animation: scrollGround 8s linear infinite;
+    }
+
+    .game-over h2 {
+        font-size: 1.2em;
+    }
+
+    .game-over p {
+        font-size: 0.9em;
+    }
+
+    .button-group {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .restart-btn, .home-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        border-radius: 15px;
+    }
+}

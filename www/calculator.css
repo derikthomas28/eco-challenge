@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #a7ffeb, #64b5f6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow-y: auto;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4caf50;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+.question {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 400;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+.option-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.option-btn {
+    background: #e0f2f1;
+    border: 2px solid #4caf50;
+    color: #1b5e20;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 400;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.option-btn:hover {
+    background: #b2dfdb;
+    transform: scale(1.05);
+}
+
+.option-btn.selected {
+    background: #4caf50;
+    color: white;
+}
+
+.next-button {
+    background: #4caf50;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.next-button:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+.next-button:active {
+    transform: scale(0.95);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f8f0;
+    border-radius: 15px;
+}
+
+.result h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.chatbot {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 15px;
+    border: 1px solid #c8e6c9;
+}
+
+.chatbot h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.footer {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.home-button {
+    background: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.home-button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p, label {
+        font-size: 0.95em;
+    }
+
+    input[type="number"] {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .option-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .next-button {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+
+    .result h2, .chatbot h2 {
+        font-size: 1.2em;
+    }
+
+    .result p, .chatbot p {
+        font-size: 0.9em;
+    }
+
+    .home-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

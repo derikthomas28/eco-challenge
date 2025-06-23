@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sky">
+            <div class="sun-moon"></div>
+            <div class="clouds clouds-1"></div>
+            <div class="clouds clouds-2"></div>
+        </div>
+        <div class="ground"></div>
+
+        <div class="dashboard-content">
+            <h1>🌿 Eco Explorer Hub</h1>
+            <div class="user-panel">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <p>Welcome, <span id="usernameDisplay">Guest</span></p>
+                    <p class="points">🌟 <span id="pointsDisplay">0</span> Points</p>
+                </div>
+            </div>
+
+            <div class="game-grid">
+                <button id="calculatorBtn" class="game-btn">
+                    <span class="icon">🌍</span>
+                    <span class="label">Footprint</span>
+                </button>
+                <button id="recyclingBtn" class="game-btn">
+                    <span class="icon">♻️</span>
+                    <span class="label">Recycling</span>
+                </button>
+                <button id="waterBtn" class="game-btn">
+                    <span class="icon">💧</span>
+                    <span class="label">Water</span>
+                </button>
+                <button id="storyBtn" class="game-btn">
+                    <span class="icon">📖</span>
+                    <span class="label">Story</span>
+                </button>
+                <button id="ecoRunBtn" class="game-btn">
+                    <span class="icon">🏃‍♂️</span>
+                    <span class="label">Eco Run</span>
+                </button>
+                <button id="leaderboardBtn" class="game-btn">
+                    <span class="icon">🏆</span>
+                    <span class="label">Leaderboard</span>
+                </button>
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">🌙 Logout</button>
+        </div>
+
+        <div class="leaf" style="top: 15%; left: 10%;"></div>
+        <div class="leaf" style="top: 40%; left: 85%;"></div>
+        <div class="leaf" style="top: 70%; left: 20%;"></div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

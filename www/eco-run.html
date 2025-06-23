@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Eco Run Adventure</title>
+    <link rel="stylesheet" href="eco-run.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sky">
+            <div class="sun"></div>
+            <div class="clouds clouds-1"></div>
+            <div class="clouds clouds-2"></div>
+        </div>
+        <div class="hills"></div>
+        <div class="ground"></div>
+
+        <div class="game-content">
+            <h1>🏃‍♂️ Eco Run Adventure</h1>
+            <p id="intro">Dodge pollution, collect eco-items, and save the Earth!</p>
+
+            <div id="gameArea" class="game-area">
+                <div id="player" class="player"></div>
+                <div id="items" class="items"></div>
+            </div>
+
+            <div class="stats">
+                <p>Score: <span id="score">0</span></p>
+                <p>Reward Points: <span id="rewardPoints">0</span></p>
+                <p>High Score: <span id="highScore">0</span></p>
+            </div>
+
+            <div id="gameOver" class="game-over hidden">
+                <h2>Adventure Ended!</h2>
+                <p>Final Score: <span id="finalScore"></span></p>
+                <p>Reward Points Earned: <span id="finalRewardPoints"></span></p>
+                <div class="button-group">
+                    <button id="restartBtn" class="restart-btn">Run Again</button>
+                    <button id="homeBtn" class="home-btn">🏠 Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="eco-run.js"></script>
+</body>
+</html>

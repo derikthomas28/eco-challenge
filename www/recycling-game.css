@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #c8e6c9, #81c784);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    -webkit-user-select: none; /* Prevent text selection on mobile */
+    user-select: none;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.item {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #555;
+    transition: transform 0.2s, opacity 0.2s;
+    position: relative;
+    touch-action: none; /* Prevent default touch scrolling */
+}
+
+.item.dragging {
+    opacity: 0.7;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.bins-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.bin {
+    background: #e0f2f1;
+    border: 3px dashed #4caf50;
+    border-radius: 15px;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 600;
+    color: #1b5e20;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.bin.drag-over {
+    background: #b2dfdb;
+    border-style: solid;
+    transform: scale(1.05);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f8f0;
+    border-radius: 15px;
+}
+
+.result h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.restart-button {
+    background: #4caf50;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.restart-button:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+.restart-button:active {
+    transform: scale(0.95);
+}
+
+.footer {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.home-button {
+    background: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.home-button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p, .score-board {
+        font-size: 0.9em;
+    }
+
+    .item {
+        width: 80px;
+        height: 80px;
+        font-size: 0.8em;
+    }
+
+    .bin {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    .result h2 {
+        font-size: 1.4em;
+    }
+
+    .result p {
+        font-size: 0.9em;
+    }
+
+    .restart-button, .home-button {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+}

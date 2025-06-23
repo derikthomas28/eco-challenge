@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard & Rewards</title>
+    <link rel="stylesheet" href="./leaderboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Leaderboard</h1>
+        <p>Check your rank and redeem your points for awesome rewards!</p>
+
+        <div class="leaderboard">
+            <h2>Top Players</h2>
+            <div id="leaderboardList" class="leaderboard-list">
+                <!-- Leaderboard entries will be inserted here -->
+            </div>
+        </div>
+
+        <div class="your-score">
+            <h2>Your Points</h2>
+            <p><span id="userPoints">0</span> Points</p>
+        </div>
+
+        <div class="rewards">
+            <h2>Redeem Rewards</h2>
+            <div id="rewardsList" class="rewards-list">
+                <!-- Rewards will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button id="homeBtn" class="home-button">🏠 Back to Dashboard</button>
+    </footer>
+
+    <script src="leaderboard.js"></script>
+</body>
+</html>

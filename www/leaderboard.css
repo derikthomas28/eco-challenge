@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #b2ebf2, #4fc3f7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #0277bd;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.leaderboard, .your-score, .rewards {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #0277bd;
+    margin-bottom: 15px;
+}
+
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leaderboard-item {
+    background: #e0f7fa;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 400;
+    color: #01579b;
+}
+
+.leaderboard-item:nth-child(1) {
+    background: #ffd700; /* Gold for #1 */
+    font-weight: 600;
+}
+
+.leaderboard-item:nth-child(2) {
+    background: #c0c0c0; /* Silver for #2 */
+}
+
+.leaderboard-item:nth-child(3) {
+    background: #cd7f32; /* Bronze for #3 */
+}
+
+.your-score p {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #0288d1;
+}
+
+.rewards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.reward-item {
+    background: #e0f2f1;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    font-weight: 400;
+    color: #1b5e20;
+}
+
+.reward-item button {
+    background: #4caf50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.reward-item button:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+.reward-item button:active {
+    transform: scale(0.95);
+}
+
+.reward-item button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.footer {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.home-button {
+    background: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.home-button:active {
+    transform: scale(0.95);
+}
+
+/* Mobile Compatibility */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .leaderboard-item {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .your-score p {
+        font-size: 1.1em;
+    }
+
+    .reward-item {
+        width: 160px;
+        padding: 10px;
+    }
+
+    .reward-item button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .home-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

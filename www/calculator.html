@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="./calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <h1>🌍 Your Daily Footprint</h1>
+        <p id="intro">Calculate your carbon impact and earn reward points!</p>
+
+        <div id="questions" class="question-container">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+
+        <button id="nextBtn" class="next-button">Next</button>
+
+        <div id="result" class="result hidden">
+            <h2>Your Daily Carbon Footprint</h2>
+            <p>Total: <span id="totalFootprint"></span> kg CO2e</p>
+            <p>Category: <span id="category"></span></p>
+            <p>Reward Points Earned: <span id="pointsEarned"></span></p>
+            <canvas id="pieChart" width="300" height="300"></canvas>
+        </div>
+
+        <div id="chatbot" class="chatbot hidden">
+            <h2>🌱 Eco Buddy</h2>
+            <p id="suggestion"></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button id="homeBtn" class="home-button">🏠 Back to Dashboard</button>
+    </footer>
+
+    <script src="calculator.js"></script>
+</body>
+</html>

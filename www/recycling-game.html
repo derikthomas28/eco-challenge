@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Minigame</title>
+    <link rel="stylesheet" href="./recycling-game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>♻️ Recycling Challenge</h1>
+        <p>Drag each item to the correct bin to earn points!</p>
+        
+        <div class="score-board">
+            <span>Score: <span id="score">0</span></span>
+            <span>Items Left: <span id="itemsLeft">5</span></span>
+        </div>
+
+        <div id="items" class="items-container">
+            <!-- Items will be dynamically inserted here -->
+        </div>
+
+        <div class="bins-container">
+            <div id="plastic" class="bin" data-type="plastic">Plastic</div>
+            <div id="paper" class="bin" data-type="paper">Paper</div>
+            <div id="glass" class="bin" data-type="glass">Glass</div>
+            <div id="organic" class="bin" data-type="organic">Organic</div>
+            <div id="trash" class="bin" data-type="trash">Trash</div>
+        </div>
+
+        <div id="result" class="result hidden">
+            <h2>Game Over!</h2>
+            <p>Your final score: <span id="finalScore"></span></p>
+            <p>Great job raising recycling awareness!</p>
+            <button id="restartBtn" class="restart-button">Play Again</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button id="homeBtn" class="home-button">🏠 Back to Dashboard</button>
+    </footer>
+
+    <script src="recycling-game.js"></script>
+</body>
+</html>

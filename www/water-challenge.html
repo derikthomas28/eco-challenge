@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Saving Challenge</title>
+    <link rel="stylesheet" href="./water-challenge.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>💧 Water Saving Challenge</h1>
+        <p>Stop the water before it overflows!</p>
+
+        <div class="game-info">
+            <span>Level: <span id="level">1</span></span>
+            <span>Score: <span id="score">0</span></span>
+        </div>
+
+        <div class="tank-container">
+            <div id="tank" class="tank">
+                <div id="water" class="water"></div>
+            </div>
+        </div>
+
+        <button id="stopBtn" class="stop-button">Stop Water</button>
+
+        <div id="result" class="result hidden">
+            <h2>Challenge Over!</h2>
+            <p>Your final score: <span id="finalScore"></span></p>
+            <p>Thanks for practicing water conservation!</p>
+            <button id="restartBtn" class="restart-button">Play Again</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button id="homeBtn" class="home-button">🏠 Back to Dashboard</button>
+    </footer>
+
+    <script src="water-challenge.js"></script>
+</body>
+</html>

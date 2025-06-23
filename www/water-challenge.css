@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #b3e5fc, #0288d1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #01579b;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #0277bd;
+    margin-bottom: 20px;
+}
+
+.tank-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 0 auto 30px;
+}
+
+.tank {
+    width: 100%;
+    height: 100%;
+    background: #e0f7fa;
+    border: 5px solid #0288d1;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: #42a5f5;
+    transition: height 0.1s linear;
+    animation: wave 2s infinite;
+}
+
+@keyframes wave {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 0; }
+}
+
+.stop-button {
+    background: #0288d1;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.stop-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.stop-button:active {
+    transform: scale(0.95);
+}
+
+.stop-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e0f7fa;
+    border-radius: 15px;
+}
+
+.result h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #01579b;
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.restart-button {
+    background: #0288d1;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.restart-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.restart-button:active {
+    transform: scale(0.95);
+}
+
+.footer {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.home-button {
+    background: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.home-button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p, .game-info {
+        font-size: 0.9em;
+    }
+
+    .tank-container {
+        width: 150px;
+        height: 250px;
+    }
+
+    .stop-button, .restart-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .result h2 {
+        font-size: 1.4em;
+    }
+
+    .result p {
+        font-size: 0.9em;
+    }
+
+    .home-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

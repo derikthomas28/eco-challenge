@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #dcedc8, #689f38);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.story-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #388e3c;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4caf50;
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.eco-meter {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background: #e0f2f1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #4caf50;
+}
+
+.eco-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4caf50, #81c784);
+    width: 50%; /* Default */
+    transition: width 0.5s ease;
+}
+
+.eco-meter span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #1b5e20;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.story-container {
+    background: #f1f8e9;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease;
+    min-height: 200px; /* Prevents it from looking too empty */
+    transition: background 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#storyText {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.choice-btn {
+    background: #e0f2f1;
+    border: 2px solid #4caf50;
+    color: #1b5e20;
+    padding: 12px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.choice-btn:hover {
+    background: #b2dfdb;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.choice-btn:active {
+    transform: scale(0.95);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f0f8f0;
+    border-radius: 15px;
+}
+
+.result h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.result p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.restart-button {
+    background: #4caf50;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 15px;
+}
+
+.restart-button:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+.restart-button:active {
+    transform: scale(0.95);
+}
+
+.footer {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.home-button {
+    background: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+.home-button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p, .story-info {
+        font-size: 0.9em;
+    }
+
+    #storyText {
+        font-size: 1em;
+    }
+
+    .choice-btn {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .result h2 {
+        font-size: 1.5em;
+    }
+
+    .result p {
+        font-size: 1em;
+    }
+
+    .restart-button, .home-button {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+
+    .eco-meter {
+        height: 18px;
+    }
+
+    .eco-meter span {
+        font-size: 0.8em;
+    }
+}

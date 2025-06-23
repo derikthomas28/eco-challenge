@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Signup</title>
+    <link rel="stylesheet" href="./login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="background-overlay"></div>
+
+        <!-- Login Form -->
+        <div id="loginCard" class="login-card">
+            <h1>Login</h1>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button id="loginBtn" class="login-button">Login</button>
+            <p class="signup-link">New here? <a href="#" id="showSignup">Sign Up</a></p>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupCard" class="login-card hidden">
+            <h1>Sign Up</h1>
+            <div class="input-group">
+                <label for="newUsername">Username</label>
+                <input type="text" id="newUsername" placeholder="Choose a username">
+            </div>
+            <div class="input-group">
+                <label for="newPassword">Password</label>
+                <input type="password" id="newPassword" placeholder="Choose a password">
+            </div>
+            <button id="signupBtn" class="login-button">Sign Up</button>
+            <p class="signup-link">Already have an account? <a href="#" id="showLogin">Login</a></p>
+            <p id="signupError" class="error-message"></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button id="homeBtn" class="home-button">🏠 Back to Dashboard</button>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>

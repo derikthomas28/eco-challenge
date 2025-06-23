@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #e0f7fa;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #87ceeb, #e0f7fa);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.sun-moon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffd700 50%, #ffeb3b 70%);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation: sunCycle 20s infinite linear;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes sunCycle {
+    0% { transform: translateX(-100px) translateY(0); }
+    50% { transform: translateX(calc(100vw - 100px)) translateY(50px); background: radial-gradient(circle, #fff 50%, #e0e0e0 70%); }
+    100% { transform: translateX(-100px) translateY(0); }
+}
+
+.clouds {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('https://cdn-icons-png.flaticon.com/512/414/414927.png') repeat-x;
+    background-size: 80px 80px;
+    opacity: 0.7;
+}
+
+.clouds-1 {
+    top: 10%;
+    animation: scrollClouds 30s linear infinite;
+}
+
+.clouds-2 {
+    top: 25%;
+    animation: scrollClouds 45s linear infinite reverse;
+}
+
+@keyframes scrollClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, #689f38, #33691e);
+    z-index: 1;
+}
+
+.dashboard-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80vh;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: #f0f8f0;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center/cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #4caf50;
+}
+
+.user-info p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #388e3c;
+}
+
+.user-info .points {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1b5e20;
+    animation: pulsePoints 2s infinite;
+}
+
+@keyframes pulsePoints {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.user-info span {
+    color: #2e7d32;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    align-content: center;
+}
+
+.game-btn {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    color: white;
+    width: 90px;
+    height: 90px;
+    max-width: 90px; /* Prevents stretching */
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-btn .icon {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.game-btn .label {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.game-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #0288d1, #0277bd);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('https://cdn-icons-png.flaticon.com/512/2909/2909789.png') no-repeat center/contain;
+    z-index: 3;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(15px) rotate(8deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .dashboard-content {
+        padding: 15px;
+        width: 95%;
+        border-radius: 15px;
+        min-height: 85vh;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    .user-panel {
+        flex-direction: row;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+    }
+
+    .user-info p {
+        font-size: 0.9em;
+    }
+
+    .user-info .points {
+        font-size: 1.1em;
+    }
+
+    .game-grid {
+        gap: 12px; /* Consistent spacing */
+        justify-content: center;
+        padding: 10px 0; /* Equal top/bottom padding */
+        max-width: 100%; /* Prevents overflow */
+    }
+
+    .game-btn {
+        width: 85px;
+        height: 85px;
+        max-width: 85px;
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    .game-btn .icon {
+        font-size: 2em;
+        margin-bottom: 4px;
+    }
+
+    .game-btn .label {
+        font-size: 0.8em;
+    }
+
+    .logout-btn {
+        padding: 10px 25px;
+        font-size: 1em;
+        border-radius: 20px;
+        margin-top: 15px;
+    }
+
+    .sun-moon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .clouds {
+        background-size: 60px 60px;
+    }
+
+    .leaf {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Mode: Eco Journey</title>
+    <link rel="stylesheet" href="./story-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🌿 Eco Journey</h1>
+        <p id="intro">Make choices to save the planet and earn reward points!</p>
+
+        <div class="story-info">
+            <span>Scene: <span id="sceneNumber">1</span>/8</span>
+            <span>Reward Points: <span id="score">0</span></span>
+        </div>
+
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+
+        <div id="ecoMeter" class="eco-meter">
+            <div id="ecoFill" class="eco-fill"></div>
+            <span>Eco Impact</span>
+        </div>
+
+        <div id="story" class="story-container">
+            <p id="storyText"></p>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        <div id="result" class="result hidden">
+            <h2>Journey Complete!</h2>
+            <p>Your final reward points: <span id="finalScore"></span></p>
+            <p>Thanks for making a difference!</p>
+            <button id="restartBtn" class="restart-button">Start Over</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button id="homeBtn" class="home-button">🏠 Back to Dashboard</button>
+    </footer>
+
+    <script src="story-mode.js"></script>
+</body>
+</html>
